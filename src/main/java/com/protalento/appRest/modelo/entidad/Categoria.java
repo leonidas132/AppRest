@@ -21,11 +21,11 @@ public class Categoria {
     public Categoria() {
     }
 
-    public Categoria(int idCategoria, String descripcion, boolean estado, List<Producto> productos) {
+    public Categoria(int idCategoria, String descripcion, boolean estado) {
         this.idCategoria = idCategoria;
         this.descripcion = descripcion;
         this.estado = estado;
-        this.productos = productos;
+
     }
 
     public int getIdCategoria() {

@@ -32,13 +32,11 @@ public class Producto {
     @JoinColumn(name = "id_categoria",insertable = false,updatable = false)
     private  Categoria categoria;
 
-    @OneToMany(mappedBy = "producto")
-    private List<CompraProducto> listaCompProducto;
 
     public Producto() {
     }
 
-    public Producto(int idProducto, String nombre, int idCategoria, String codigoBarras, double precioVenta, int cantidadStock, boolean estado, Categoria categoria, List<CompraProducto> listaCompProducto) {
+    public Producto(int idProducto, String nombre, int idCategoria, String codigoBarras, double precioVenta, int cantidadStock, boolean estado, Categoria categoria) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.idCategoria = idCategoria;
@@ -47,7 +45,7 @@ public class Producto {
         CantidadStock = cantidadStock;
         this.estado = estado;
         this.categoria = categoria;
-        this.listaCompProducto = listaCompProducto;
+
     }
 
     public Categoria getCategoria() {
@@ -114,11 +112,5 @@ public class Producto {
         this.estado = estado;
     }
 
-    public List<CompraProducto> getListaCompProducto() {
-        return listaCompProducto;
-    }
 
-    public void setListaCompProducto(List<CompraProducto> listaCompProducto) {
-        this.listaCompProducto = listaCompProducto;
-    }
 }
