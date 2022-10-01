@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Prodcutos")
+@Table(name = "productos")
 public class Producto {
 
     @Id
-    @Column(name = "id_prodcuto",unique = true)
+    @Column(name = "id_producto",unique = true)
     private int idProducto;
 
     private String nombre;
@@ -28,15 +28,12 @@ public class Producto {
     private boolean estado;
 
     //este atributo nos ayuda a relacionar nuestra tabla categoria con productos
-    @ManyToOne
-    @JoinColumn(name = "id_categoria",insertable = false,updatable = false)
-    private  Categoria categoria;
 
 
     public Producto() {
     }
 
-    public Producto(int idProducto, String nombre, int idCategoria, String codigoBarras, double precioVenta, int cantidadStock, boolean estado, Categoria categoria) {
+    public Producto(int idProducto, String nombre, int idCategoria, String codigoBarras, double precioVenta, int cantidadStock, boolean estado ) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.idCategoria = idCategoria;
@@ -44,17 +41,10 @@ public class Producto {
         this.precioVenta = precioVenta;
         CantidadStock = cantidadStock;
         this.estado = estado;
-        this.categoria = categoria;
+
 
     }
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
 
     public int getIdProducto() {
         return idProducto;

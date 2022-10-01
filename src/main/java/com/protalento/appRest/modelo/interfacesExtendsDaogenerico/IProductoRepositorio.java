@@ -6,9 +6,13 @@ import com.protalento.appRest.modelo.interfaceJdbc.DAOJpaRepository;
 
 import java.util.List;
 
-public interface IProductoRepositorio  {
+public interface IProductoRepositorio {
 
-    List<Producto> getALL ();
+    List<Producto> getALL();
 
+    Producto geGuardar(Producto newProduc);
 
+    Producto getActualizar(Producto producto, int id);
+
+    void remover(int id);
 }
